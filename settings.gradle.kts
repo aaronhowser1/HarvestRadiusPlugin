@@ -1,7 +1,7 @@
 pluginManagement {
-    plugins {
-        id 'org.jetbrains.kotlin.jvm' version '2.3.0'
-    }
+	plugins {
+		id("org.jetbrains.kotlin.jvm") version "2.3.0"
+	}
 }
 
 rootProject.name = "HarvestRadius"
