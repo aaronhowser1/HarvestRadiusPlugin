@@ -1,5 +1,6 @@
 package dev.aaronhowser.mods.hytale.harvestradius;
 
+import com.hypixel.hytale.server.core.event.events.ecs.PlaceBlockEvent;
 import com.hypixel.hytale.server.core.event.events.ecs.UseBlockEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
@@ -19,10 +20,10 @@ public class HarvestRadiusPlugin extends JavaPlugin {
 		}
 
 		getEventRegistry().registerGlobal(
-				UseBlockEvent.Post.class,
+				PlaceBlockEvent.class,
 				(event) -> {
-					var entityRef = event.getContext().getEntity();
-					System.out.println(entityRef);
+					var location = event.getTargetBlock();
+					System.out.println(location);
 				}
 		);
 
