@@ -10,9 +10,10 @@ import dev.aaronhowser.mods.hytale.harvestradius.commands.TitleCommand
 import dev.aaronhowser.mods.hytale.harvestradius.listeners.PlayerChatListener
 import dev.aaronhowser.mods.hytale.harvestradius.listeners.PlayerReadyListener
 import java.util.function.Consumer
-import javax.annotation.Nonnull
 
-class HarvestRadius(@Nonnull init: JavaPluginInit) : JavaPlugin(init) {
+class HarvestRadius(init: JavaPluginInit) : JavaPlugin(init) {
+
+
 	override fun setup() {
 		// Commands
 		commandRegistry.registerCommand(CameraCommand())
