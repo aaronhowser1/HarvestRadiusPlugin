@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
 }
 
-group = 'com.example'
+group = 'dev.aaronhowser.mods.hytale'
 version = '1.0-SNAPSHOT'
 
 repositories {
