@@ -8,21 +8,22 @@ import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayer
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
 
 public class TestCommand extends AbstractPlayerCommand {
 
-	public TestCommand(@NotNull String name, @NotNull String description) {
+	public TestCommand(@Nonnull String name, @Nonnull String description) {
 		super(name, description);
 	}
 
 	@Override
 	protected void execute(
-			@NotNull CommandContext commandContext,
-			@NotNull Store<EntityStore> store,
-			@NotNull Ref<EntityStore> ref,
-			@NotNull PlayerRef playerRef,
-			@NotNull World world
+			@Nonnull CommandContext commandContext,
+			@Nonnull Store<EntityStore> store,
+			@Nonnull Ref<EntityStore> ref,
+			@Nonnull PlayerRef playerRef,
+			@Nonnull World world
 	) {
 		playerRef.sendMessage(Message.raw("Test!"));
 	}
