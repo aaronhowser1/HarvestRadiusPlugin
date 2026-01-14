@@ -1,7 +1,6 @@
 package dev.aaronhowser.mods.hytale.harvestradius;
 
-import com.hypixel.hytale.server.core.Message;
-import com.hypixel.hytale.server.core.event.events.player.PlayerInteractEvent;
+import com.hypixel.hytale.server.core.event.events.ecs.UseBlockEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 
@@ -20,11 +19,10 @@ public class HarvestRadiusPlugin extends JavaPlugin {
 		}
 
 		getEventRegistry().registerGlobal(
-				PlayerInteractEvent.class,
+				UseBlockEvent.Post.class,
 				(event) -> {
-					var player = event.getPlayer();
-					var message = Message.raw("You interacted with something at position: " + event.getTargetBlock().toString());
-					player.sendMessage(message);
+					var entityRef = event.getContext().getEntity();
+					System.out.println(entityRef);
 				}
 		);
 
