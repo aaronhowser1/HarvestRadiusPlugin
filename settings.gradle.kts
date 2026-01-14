@@ -1,1 +1,1 @@
-rootProject.name = "HarvestRadius"
+rootProject.name = "HarvestRadiusPlugin"
