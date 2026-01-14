@@ -4,11 +4,12 @@ import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.event.events.player.PlayerInteractEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
-import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
 
 public class HarvestRadius extends JavaPlugin {
 
-	public HarvestRadius(@NotNull JavaPluginInit init) {
+	public HarvestRadius(@Nonnull JavaPluginInit init) {
 		super(init);
 
 		for (int i = 0; i < 100; i++) {
