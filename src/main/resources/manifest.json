@@ -1,6 +1,6 @@
 {
-  "Group": "com.example",
-  "Name": "ExamplePlugin",
+  "Group": "dev.aaronhowser.mods.hytale",
+  "Name": "HarvestRadius",
   "Version": "1.0.0",
   "Description": "Your plugin description here.",
   "Authors": [
@@ -15,5 +15,5 @@
   "Dependencies": {},
   "OptionalDependencies": {},
   "DisabledByDefault": false,
-  "Main": "com.example.plugin.ExamplePlugin"
+  "Main": "dev.aaronhowser.mods.hytale.harvestradius.HarvestRadius"
 }
