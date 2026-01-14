@@ -9,12 +9,14 @@ class HarvestRadius(init: JavaPluginInit) : JavaPlugin(init) {
 
 	override fun setup() {
 
-		eventRegistry.registerGlobal(PlayerInteractEvent::class.java) { event ->
+		eventRegistry.register(PlayerInteractEvent::class.java) { event ->
 			val player = event.player
 			val coordinates = event.targetBlock
 
 			player.sendMessage(Message.raw("You interacted with block at: ${coordinates.x}, ${coordinates.y}, ${coordinates.z}"))
 		}
+
+		commandRegistry.registerCommand(TestCommand("test", "A test command", false))
 
 	}
 
