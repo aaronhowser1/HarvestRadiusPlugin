@@ -1,6 +1,6 @@
-package com.example.plugin.commands
+package dev.aaronhowser.mods.hytale.harvestradius.commands
 
-import com.example.plugin.utils.ServerUtil.executeWorld
+import dev.aaronhowser.mods.hytale.harvestradius.utils.ServerUtil.executeWorld
 import com.hypixel.hytale.server.core.Message
 import com.hypixel.hytale.server.core.command.system.CommandContext
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg

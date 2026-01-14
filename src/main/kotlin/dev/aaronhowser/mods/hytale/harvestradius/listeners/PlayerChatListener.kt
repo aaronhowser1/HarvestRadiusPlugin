@@ -1,6 +1,6 @@
-package com.example.plugin.listeners
+package dev.aaronhowser.mods.hytale.harvestradius.listeners
 
-import com.example.plugin.chat.ChatMessageFormatter
+import dev.aaronhowser.mods.hytale.harvestradius.chat.ChatMessageFormatter
 import com.hypixel.hytale.server.core.event.events.player.PlayerChatEvent
 
 object PlayerChatListener {

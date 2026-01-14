@@ -1,4 +1,4 @@
-package com.example.plugin.commands
+package dev.aaronhowser.mods.hytale.harvestradius.commands
 
 import com.hypixel.hytale.server.core.Message
 import com.hypixel.hytale.server.core.command.system.CommandContext

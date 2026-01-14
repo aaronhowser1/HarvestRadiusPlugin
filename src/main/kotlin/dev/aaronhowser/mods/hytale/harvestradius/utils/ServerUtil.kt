@@ -1,4 +1,4 @@
-package com.example.plugin.utils
+package dev.aaronhowser.mods.hytale.harvestradius.utils
 
 import com.hypixel.hytale.server.core.universe.Universe
 
