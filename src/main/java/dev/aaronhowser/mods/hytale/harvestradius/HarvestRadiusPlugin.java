@@ -10,11 +10,13 @@ import javax.annotation.Nonnull;
 public class HarvestRadiusPlugin extends JavaPlugin {
 
 	private final Config<HRConfig> config;
+	private final HREvents eventListener;
 
 	public HarvestRadiusPlugin(@Nonnull JavaPluginInit init) {
 		super(init);
 
 		this.config = this.withConfig("HarvestRadius", HRConfig.CODEC);
+		this.eventListener = new HREvents(this);
 	}
 
 	@Override
@@ -25,14 +27,14 @@ public class HarvestRadiusPlugin extends JavaPlugin {
 
 		getEventRegistry().registerGlobal(
 				UseBlockEvent.class,
-				HREvents::useBlock
+				eventListener::useBlock
 		);
 
 		getCommandRegistry().registerCommand(new TestCommand("test", "Test command!"));
 	}
 
-	public HRConfig getHRConfig() {
-		return config.get();
+	public Config<HRConfig> getHRConfig() {
+		return config;
 	}
 
 }
