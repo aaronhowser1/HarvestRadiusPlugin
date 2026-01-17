@@ -22,7 +22,7 @@ public class HarvestRadiusPlugin extends JavaPlugin {
 			getLogger().atInfo().log("Harvest Radius Plugin Initialized!");
 		}
 
-		getEntityStoreRegistry().registerSystem(new HarvestRadiusSystem(config));
+		getEntityStoreRegistry().registerSystem(new HarvestRadiusSystem());
 
 		getCommandRegistry().registerCommand(new TestCommand("test", "Test command!"));
 	}

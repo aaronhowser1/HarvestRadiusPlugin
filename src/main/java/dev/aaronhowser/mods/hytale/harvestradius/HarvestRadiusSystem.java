@@ -17,11 +17,11 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlockEvent> {
 
-	private final Config<HRConfig> config;
+//	private final Config<HRConfig> config;
 
-	protected HarvestRadiusSystem(Config<HRConfig> config) {
+	protected HarvestRadiusSystem() {
 		super(UseBlockEvent.class);
-		this.config = config;
+//		this.config = config;
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlock
 
 		var center = useBlockEvent.getTargetBlock();
 
-		double radius = config.get().getRadius();
+		double radius = 5.1;
 		int radiusCeil = (int) Math.ceil(radius);
 
 		for (var dx = -radiusCeil; dx <= radiusCeil; dx++) {
