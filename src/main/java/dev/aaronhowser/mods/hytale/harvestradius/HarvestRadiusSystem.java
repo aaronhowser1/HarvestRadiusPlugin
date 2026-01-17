@@ -9,12 +9,10 @@ import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.ecs.UseBlockEvent;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.core.util.Config;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 
-@ParametersAreNonnullByDefault
 public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlockEvent> {
 
 //	private final Config<HRConfig> config;
@@ -27,10 +25,10 @@ public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlock
 	@Override
 	public void handle(
 			int i,
-			ArchetypeChunk<EntityStore> archetypeChunk,
-			Store<EntityStore> store,
-			CommandBuffer<EntityStore> commandBuffer,
-			UseBlockEvent useBlockEvent
+			@Nonnull ArchetypeChunk<EntityStore> archetypeChunk,
+			@Nonnull Store<EntityStore> store,
+			@Nonnull CommandBuffer<EntityStore> commandBuffer,
+			@Nonnull UseBlockEvent useBlockEvent
 	) {
 		System.out.println("HarvestRadiusListener triggered!");
 
