@@ -9,17 +9,18 @@ import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.ecs.UseBlockEvent;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.hypixel.hytale.server.core.util.Config;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlockEvent> {
 
-//	private final Config<HRConfig> config;
+	private final Config<HRConfig> config;
 
-	protected HarvestRadiusSystem() {
+	protected HarvestRadiusSystem(Config<HRConfig> config) {
 		super(UseBlockEvent.class);
-//		this.config = config;
+		this.config = config;
 	}
 
 	@Override
@@ -48,7 +49,7 @@ public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlock
 
 		var center = useBlockEvent.getTargetBlock();
 
-		double radius = 5.1;
+		double radius = config.get().getRadius();
 		int radiusCeil = (int) Math.ceil(radius);
 
 		for (var dx = -radiusCeil; dx <= radiusCeil; dx++) {
