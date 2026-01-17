@@ -15,12 +15,12 @@ public class HarvestRadiusPlugin extends JavaPlugin {
 	@Override
 	protected void setup() {
 		for (int i = 0; i < 100; i++) {
-			getLogger().atInfo().log("Harvest Radius Plugin Initialized! Instance number: " + i);
+			getLogger().atInfo().log("Harvest Radius Plugin Initialized!");
 		}
 
 		getEventRegistry().registerGlobal(
 				UseBlockEvent.class,
-				HarvestRadiusListener::test
+				HarvestRadiusListener::useBlock
 		);
 
 		getCommandRegistry().registerCommand(new TestCommand("test", "Test command!"));
