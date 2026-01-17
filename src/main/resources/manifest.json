@@ -1,6 +1,7 @@
 {
-  "Group": "dev.aaronhowser.mods.hytale",
-  "Name": "HarvestRadiusPlugin",
-  "Version": "1.0.0",
-  "Main": "dev.aaronhowser.mods.hytale.harvestradius.HarvestRadiusPlugin"
+    "Group": "dev.aaronhowser.mods.hytale",
+    "Name": "HarvestRadiusPlugin",
+    "Version": "0.0.2",
+    "Main": "dev.aaronhowser.mods.hytale.harvestradius.HarvestRadiusPlugin",
+    "IncludesAssetPack": false
 }
