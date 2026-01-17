@@ -69,6 +69,6 @@ public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlock
 	@Nullable
 	@Override
 	public Query<EntityStore> getQuery() {
-		return null;
+		return Query.any();
 	}
 }
