@@ -4,7 +4,7 @@ import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.ecs.UseBlockEvent;
 
-public class HarvestRadiusListener {
+public class HREvents {
 
 	public static void useBlock(UseBlockEvent event) {
 		System.out.println("HarvestRadiusListener triggered!");

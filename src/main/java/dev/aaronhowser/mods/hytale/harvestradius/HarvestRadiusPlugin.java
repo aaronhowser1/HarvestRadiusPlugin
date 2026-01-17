@@ -20,7 +20,7 @@ public class HarvestRadiusPlugin extends JavaPlugin {
 
 		getEventRegistry().registerGlobal(
 				UseBlockEvent.class,
-				HarvestRadiusListener::useBlock
+				HREvents::useBlock
 		);
 
 		getCommandRegistry().registerCommand(new TestCommand("test", "Test command!"));
