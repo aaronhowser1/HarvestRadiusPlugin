@@ -20,9 +20,34 @@ public class HREvents {
 		var store = entity.getStore();
 		var player = store.getComponent(entity, Player.getComponentType());
 
+		if (player == null) {
+			return;
+		}
+
 		player.sendMessage(Message.raw("HarvestRadiusListener triggered!"));
 
+		var world = player.getWorld();
+		if (world == null) {
+			return;
+		}
+
+		var center = event.getTargetBlock();
+
 		double radius = config.get().getRadius();
+		int radiusCeil = (int) Math.ceil(radius);
+
+		for (var dx = -radiusCeil; dx <= radiusCeil; dx++) {
+			for (var dy = -radiusCeil; dy <= radiusCeil; dy++) {
+				for (var dz = -radiusCeil; dz <= radiusCeil; dz++) {
+					double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+					if (distance <= radius) {
+						var targetPos = center.add(dx, dy, dz);
+						var targetBlock = world.getBlock(targetPos);
+					}
+				}
+			}
+		}
+
 	}
 
 }
