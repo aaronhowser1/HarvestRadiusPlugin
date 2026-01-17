@@ -1,6 +1,6 @@
 package dev.aaronhowser.mods.hytale.harvestradius;
 
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
+import com.hypixel.hytale.server.core.event.events.ecs.UseBlockEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 
@@ -18,12 +18,10 @@ public class HarvestRadiusPlugin extends JavaPlugin {
 			getLogger().atInfo().log("Harvest Radius Plugin Initialized! Instance number: " + i);
 		}
 
-		getCodecRegistry(Interaction.CODEC)
-				.register(
-						"Aaron_HarvestRadius_HarvestInteraction",
-						HarvestInteraction.class,
-						HarvestInteraction.CODEC
-				);
+		getEventRegistry().registerGlobal(
+				UseBlockEvent.class,
+				HarvestRadiusListener::test
+		);
 
 		getCommandRegistry().registerCommand(new TestCommand("test", "Test command!"));
 	}
