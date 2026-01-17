@@ -1,5 +1,6 @@
 package dev.aaronhowser.mods.hytale.harvestradius;
 
+import com.hypixel.hytale.component.Archetype;
 import com.hypixel.hytale.component.ArchetypeChunk;
 import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Store;
@@ -14,12 +15,12 @@ import com.hypixel.hytale.server.core.util.Config;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlockEvent> {
+public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlockEvent.Post> {
 
 	private final Config<HRConfig> config;
 
 	protected HarvestRadiusSystem(Config<HRConfig> config) {
-		super(UseBlockEvent.class);
+		super(UseBlockEvent.Post.class);
 		this.config = config;
 	}
 
@@ -29,7 +30,7 @@ public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlock
 			@Nonnull ArchetypeChunk<EntityStore> archetypeChunk,
 			@Nonnull Store<EntityStore> store,
 			@Nonnull CommandBuffer<EntityStore> commandBuffer,
-			@Nonnull UseBlockEvent useBlockEvent
+			@Nonnull UseBlockEvent.Post useBlockEvent
 	) {
 		System.out.println("HarvestRadiusListener triggered!");
 
@@ -59,6 +60,15 @@ public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlock
 					if (distance <= radius) {
 						var targetPos = center.add(dx, dy, dz);
 						var targetBlock = world.getBlock(targetPos);
+
+//						BlockType blockType = chunk.getBlockType(localX, y, localZ);
+//						if (blockType == null) continue;
+//						BlockGathering gathering = blockType.getGathering();
+//						if (gathering != null && gathering.isHarvestable()) {
+//							chunk.setBlock(localX, y, localZ, 0,
+//									BlockType.getAssetMap().getAsset("Empty"),
+//									0, 0, 256);
+//						}
 					}
 				}
 			}
@@ -69,6 +79,6 @@ public class HarvestRadiusSystem extends EntityEventSystem<EntityStore, UseBlock
 	@Nullable
 	@Override
 	public Query<EntityStore> getQuery() {
-		return Query.any();
+		return Archetype.empty();
 	}
 }
